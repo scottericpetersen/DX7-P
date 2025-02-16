@@ -15,10 +15,11 @@ This project is a pedogogical extension of Aziz Ege Gonul's DX7 clone here: http
 
 # To use:
 
-1) Download or clone this repo.
-2) Open the example.scd document in SuperCollider.
-3) Run 1) in that document
-4) Follow instructions based on what you want to do.
+1) Download and install the SC3 Plugins for your architecture: https://github.com/supercollider/sc3-plugins/releases
+2) Download or clone this repo.
+3) Open the example.scd document in SuperCollider.
+4) Run 1) in that document to register all objects.
+5) Follow instructions for an introduction to DX7-P's functionality.
 
 ## To-Do
 
