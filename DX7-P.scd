@@ -393,8 +393,8 @@ SynthDef(\DX7, {
 		(out[5] * 1 * dn41),
 	]);
 
-	FreeSelfWhenDone.kr(Line.kr(0, 1, 10));
-	kilnod = DetectSilence.ar(out, 0.01, 0.2, doneAction:2);
+	// FreeSelfWhenDone.kr(Line.kr(0, 1, 10));
+	DetectSilence.ar(out, 0.01, 0.2, doneAction:2);
 	out = out / outMult;
 	Out.ar(outBus, out.dup);
 }).add;
