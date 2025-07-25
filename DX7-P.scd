@@ -1016,13 +1016,13 @@ analysis = {arg outBus=0, pitch, gate = 1,
 
 	envEnv6 = Env.new([(-1 * env6L0).dbamp ,(-1 * env6L1).dbamp, (-1 * env6L2).dbamp, (-1 * env6L3).dbamp, (-1 * env6L4).dbamp], [env6R0,env6R1,env6R2,env6R3], [env6C0,env6C1,env6C2,env6C3], 3);
 
-	ctls = [ // removed Ugens and changed momentary amplitude based on envs to simple max level (.maxLevel) -- this may *not* be representative of the steady-state sound...
-		[coars1 * fine_1 * ((pitch * noteBlok1) + ((detun1-7)/32)) /** (envEnvP.maxLevel.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv1.maxLevel * 1 * (modSens1 / 3).dbamp],
-		[coars2 * fine_2 * ((pitch  * noteBlok2) + ((detun2-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv2.maxLevel * 1 * (modSens2/3).dbamp],
-		[coars3 * fine_3 * ((pitch * noteBlok3) + ((detun3-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv3.maxLevel * 1 * (modSens3/3).dbamp],
-		[coars4 * fine_4 * ((pitch  * noteBlok4) + ((detun4-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv4.maxLevel * 1 * (modSens4/3).dbamp],
-		[coars5 * fine_5 * ((pitch  * noteBlok5) + ((detun5-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv5.maxLevel * 1 * (modSens5/3).dbamp],
-		[coars6 * fine_6 * ((pitch  * noteBlok6) + ((detun6-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv6.maxLevel * 1 * (modSens6/3).dbamp]
+	ctls = [ // removed Ugens and changed momentary amplitude based on envs to simple max level (levels.maxItem) -- this may *not* be representative of the steady-state sound...
+		[coars1 * fine_1 * ((pitch * noteBlok1) + ((detun1-7)/32)) /** (envEnvP.levels.maxItem.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv1.levels.maxItem * 1 * (modSens1 / 3).dbamp],
+		[coars2 * fine_2 * ((pitch  * noteBlok2) + ((detun2-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv2.levels.maxItem * 1 * (modSens2/3).dbamp],
+		[coars3 * fine_3 * ((pitch * noteBlok3) + ((detun3-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv3.levels.maxItem * 1 * (modSens3/3).dbamp],
+		[coars4 * fine_4 * ((pitch  * noteBlok4) + ((detun4-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv4.levels.maxItem * 1 * (modSens4/3).dbamp],
+		[coars5 * fine_5 * ((pitch  * noteBlok5) + ((detun5-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv5.levels.maxItem * 1 * (modSens5/3).dbamp],
+		[coars6 * fine_6 * ((pitch  * noteBlok6) + ((detun6-7)/32)) /** (envAmpP.midiratio)*/ * 1,  rrand(0,2pi) * osc_sync, envEnv6.levels.maxItem * 1 * (modSens6/3).dbamp]
 	];
 
 	if (local_flag == \write) {return_text = return_text ++ ("Ctls = " + ctls) + "\n\n"};
